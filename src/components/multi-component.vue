@@ -205,8 +205,9 @@ onMounted(Fetch1user);
         <!-- User List -->
         <section class="card">
             <h3>Users</h3>
-            <ul> 
-                <li class="d-flex  text-center align-items-center m-1 p-1 rounded-3 justify-content-between li-m" v-for="user in users" :key="user.id">
+            <ul>
+                <li class="d-flex  text-center align-items-center m-1 p-1 rounded-3 justify-content-between li-m"
+                    v-for="user in users" :key="user.id">
                     {{ user.name }} ({{ user.email }})
                     <div>
                         <button class="btn btn-primary m-1" @click="selectUserForEdit(user)">Edit</button>
@@ -216,7 +217,8 @@ onMounted(Fetch1user);
                 </li>
             </ul>
         </section>
-        
+    </div>
+    <div class="F">
         <!-- ________________________________________________ -->
         <!-- Create User -->
         <form @submit.prevent="createUser">
@@ -230,12 +232,12 @@ onMounted(Fetch1user);
         </form>
         <!-- _________________________________________________ -->
         <!-- Update User (PUT) -->
-        <form  @submit.prevent="updateWithPut">
+        <form @submit.prevent="updateWithPut">
             <section class="card" v-if="selectedUserId">
                 <h3>Update User (PUT)</h3>
-                <input class="m-1" v-model="updatedUser.name" placeholder="Name"  type="text" required/>
-                <input class="m-1" v-model="updatedUser.email" placeholder="Email" type="email" required/>
-                <button class="btn m-1" type="submit">Update (PUT)</button>
+                <input class="m-1" v-model="updatedUser.name" placeholder="Name" type="text" required />
+                <input class="m-1" v-model="updatedUser.email" placeholder="Email" type="email" required />
+                <button class=" btn btn-primary m-1" type="submit">Update (PUT)</button>
                 <div v-if="putResult">Updated: {{ putResult.name }}</div>
             </section>
         </form>
@@ -245,7 +247,7 @@ onMounted(Fetch1user);
             <section class="card" v-if="selectedUserId">
                 <h3>Update User Name Only (PATCH)</h3>
                 <input class="m-1" v-model="patchUser.name" placeholder="Name" />
-                <button class="btn m-1" type="submit">Update (PATCH)</button>
+                <button class="btn btn-primary m-1" type="submit">Update (PATCH)</button>
                 <div v-if="patchResult">Updated Name: {{ patchResult.name }}</div>
             </section>
         </form>
@@ -258,22 +260,30 @@ onMounted(Fetch1user);
 </template>
 
 <style scoped>
-.li-m
-{
+.li-m {
     background-color: #abc5de;
+}
+.F
+{
+    display: flex;
+    margin-left: 45px;
+    padding: 16px;
+    font-family: 'Segoe UI', sans-serif;
 }
 .container {
     margin: 32px auto;
     padding: 16px;
     font-family: 'Segoe UI', sans-serif;
+    display: flex;
 }
 
 .card {
     background-color: #818181;
-    padding: 24px;
+    padding: 30px;
     margin-bottom: 24px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin: 5px;
 }
 
 h1 {
