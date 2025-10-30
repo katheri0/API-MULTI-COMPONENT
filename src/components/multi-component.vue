@@ -235,7 +235,7 @@ onMounted(Fetch1user);
                 <h3>Update User (PUT)</h3>
                 <input class="m-1" v-model="updatedUser.name" placeholder="Name"  type="text" required/>
                 <input class="m-1" v-model="updatedUser.email" placeholder="Email" type="email" required/>
-                <button class="btn m-1" type="submit">Update (PUT)</button>
+                <button class="btn m-1 btn-primary" type="submit">Update (PUT)</button>
                 <div v-if="putResult">Updated: {{ putResult.name }}</div>
             </section>
         </form>
@@ -245,7 +245,7 @@ onMounted(Fetch1user);
             <section class="card" v-if="selectedUserId">
                 <h3>Update User Name Only (PATCH)</h3>
                 <input class="m-1" v-model="patchUser.name" placeholder="Name" />
-                <button class="btn m-1" type="submit">Update (PATCH)</button>
+                <button class="btn m-1 btn-primary" type="submit">Update (PATCH)</button>
                 <div v-if="patchResult">Updated Name: {{ patchResult.name }}</div>
             </section>
         </form>
@@ -338,41 +338,4 @@ ul {
     border-bottom: 1px solid #eee;
 }
 
-/* .btn {
-    padding: 3px 6px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.2s ease;
-} */
-
-/* .btn:hover {
-    background-color: #0056b3;
-} */
-
-/* .delete-btn {
-    background: none;
-    background-color: #ff0000;
-    border-radius: 6px;
-    color: #fff;
-    border: none;
-    font-size: 10px;
-    cursor: pointer;
-    padding: 9px;
-}
-
-.info {
-    margin-top: 8px;
-    background-color: #071b23;
-    padding: 8px;
-    border-left: 4px solid #1890ff;
-}
-
-.error {
-    margin-top: 8px;
-    color: red;
-    font-weight: bold;
-} */
 </style>
